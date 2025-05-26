@@ -18,18 +18,45 @@ const questions = [
   },
   {
     id: 2,
-    question: "2 + 2 equals?",
-    options: ["3", "4", "5", "22"],
-    correctAnswer: "4",
+    question: "What is the largest mammal in the world?",
+    options: ["African Elephant", "Hippopotamus", "Giraffe", "Blue Whale"],
+    correctAnswer: "Blue Whale",
+  },
+  {
+    id: 3,
+    question: "What is the capital city of Australia?",
+    options: ["Brisbane", "Melbourne", "Canberra", "Sydney"],
+    correctAnswer: "Canberra",
+  },
+  {
+    id: 4,
+    question: "Who painted the Mona Lisa?",
+    options: [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Michelangelo",
+    ],
+    correctAnswer: "Leonardo da Vinci",
+  },
+  {
+    id: 5,
+    question: "What is the hardest natural substance on Earth?",
+    options: ["Gold", "Iron", "Diamond", "Quartz"],
+    correctAnswer: "Diamond",
+  },
+  {
+    id: 6,
+    question: "What is the smallest prime number?",
+    options: ["0", "1", "2", "3"],
+    correctAnswer: "2",
   },
 ];
 
-// Health check / root endpoint
 app.get("/", (req, res) => {
   res.send("Backend is running");
 });
 
-// Get all questions (hides correct answers)
 app.get("/api/questions", (req, res) => {
   const safeQuestions = questions.map(({ correctAnswer, ...rest }) => rest);
   res.json(safeQuestions);
