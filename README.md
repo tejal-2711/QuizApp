@@ -1,0 +1,1 @@
+This application is an education quiz tool where the React frontend fetches quiz questions from a Node.js/Express backend API. Users answer questions, submit their responses, and receive a score based on their answers, enabling interactive learning through a simple web interface.
